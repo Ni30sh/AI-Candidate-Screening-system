@@ -1,0 +1,21 @@
+services:
+  backend:
+    build: ./backend
+    env_file: .env
+    environment:
+      DATABASE_URL: sqlite:////app/data/interview.db
+      VECTOR_DB_PATH: /app/data/vector_index.pkl
+      CORS_ORIGINS: http://localhost:5173
+    volumes:
+      - app-data:/app/data
+    ports:
+      - "8000:8000"
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  app-data:

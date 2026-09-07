@@ -114,3 +114,5 @@ The tests cover parsing, analysis, dynamic context, retrieval metadata, report s
 Run the FastAPI app behind a production ASGI server and build the frontend with `npm run build`, serving `frontend/dist` from a static host. Configure the deployed API URL and CORS origins through environment variables. A demo video URL is intentionally not claimed until one is recorded against the working deployment.
 
 For a containerized local deployment, copy `.env.example` to `.env`, then run `docker compose up --build`. The frontend is served by Nginx and the backend persists its SQLite database and vector index in the `app-data` volume. A PostgreSQL deployment should replace the Compose SQLite URL with `postgresql+psycopg://...`, set `AUTO_CREATE_SCHEMA=false`, and run Alembic before serving traffic.
+
+# AI-Candidate-Screening-system
